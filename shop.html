@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop - Chotomate ♡</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../publish/base.css">
+  <link rel="stylesheet" href="../publish/shop.css">
+  <link rel="stylesheet" href="../publish/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <header id="header">
+    <div class="container">
+      <div class="logo">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp7o2jO1zCpt_FjuiaeBRLkcaCfmVsQSZ6fA&s" alt="Chotomate Logo">
+        <span>Chotomate</span>
+      </div>
+      <nav id="navigationbar">
+        <ul id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html" class="active">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="cart.html">Giỏ hàng <span>🛒</span></a></li>
+        </ul>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section id="page-header" class="shop-header">
+    <h2>#Cửa Hàng</h2>
+    <p>Khám phá toàn bộ bộ sưu tập mô hình anime của chúng tôi!</p>
+  </section>
+
+  <!-- Shop Section -->
+  <section id="shop-page" class="section-p1">
+
+    <!-- Filter & Sort Bar -->
+    <div class="shop-toolbar">
+      <div class="filter-group">
+        <label>Lọc theo:</label>
+        <button class="filter-btn active" onclick="filterProducts('all', this)">Tất cả</button>
+        <button class="filter-btn" onclick="filterProducts('nendoroid', this)">Nendoroid</button>
+        <button class="filter-btn" onclick="filterProducts('figure', this)">Scale Figure</button>
+        <button class="filter-btn" onclick="filterProducts('plushie', this)">Plushie</button>
+        <button class="filter-btn" onclick="filterProducts('other', this)">Khác</button>
+      </div>
+      <div class="sort-group">
+        <label>Sắp xếp:</label>
+        <select id="sort-select" onchange="sortProducts()">
+          <option value="default">Mặc định</option>
+          <option value="price-asc">Giá: Thấp → Cao</option>
+          <option value="price-desc">Giá: Cao → Thấp</option>
+          <option value="name-asc">Tên: A → Z</option>
+        </select>
+        <span class="product-count" id="product-count">Hiển thị 14 sản phẩm</span>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="pro-container" id="product-grid">
+
+      <div class="pro" data-category="nendoroid" data-price="60" data-name="Nendoroid 3006 DecoMiku Lightness">
+        <a href="product.html"><img src="https://cdn.hstatic.net/products/200000462939/nendoroid-character-vocal-series-01-hatsune-miku-decomiku-lightness-01_bfd71ffb3f6b495cb48d7c712daf8ba9_grande.jpg" alt="DecoMiku Lightness"></a>
+        <div class="des">
+          <span>VOCALOID | Good Smile Company</span>
+          <h5><a href="product.html">Nendoroid 3006 DecoMiku Lightness</a></h5>
+          <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <h4>$60</h4>
+        </div>
+        <a href="cart.html" class="cart-btn"><i class="fa-solid fa-cart-plus cart"></i></a>
+      </div>
+
+      <div class="pro" data-category="nendoroid" data-price="60" data-name="Nendoroid 3007 DecoMiku Darkness">
+        <a href="product.html"><img src="https://cdn.hstatic.net/products/200000462939/-nendoroid-character-vocal-series-01-hatsune-miku-decomiku-darkness-01_479c873fdb674bac935dc5cb6631a1d2_grande.jpg" alt="DecoMiku Darkness"></a>
+        <div class="des">
+          <span>Character Vocal Series 01 | Good Smile</span>
+          <h5><a href="product.html">Nendoroid 3007 DecoMiku Darkness</a></h5>
+          <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <h4>$60</h4>
+        </div>
+        <a href="cart.html" class="cart-btn"><i class="fa-solid fa-cart-plus cart"></i></a>
+      </div>
+
+      <div class="pro" data-category="nendoroid" data-price="72" data-name="Nendoroid 3010 MIKU WITH YOU 2025">
+        <a href="product.html"><img src="https://cdn.hstatic.net/products/200000462939/gsc-nendoroid-character-vocal-series-01-hatsune-miku-miku-you-2025-01_a27744bf59af4359b4c8a58387428832_grande.jpg" alt="Miku You 2025"></a>
+        <div class="des">
+          <span>VOCALOID Series | Good Smile Company</span>
+          <h5><a href="product.html">Nendoroid 3010 MIKU WITH YOU 2025 Ver.</a></h5>
+          <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <h4>$72</h4>
+        </div>
+        <a href="cart.html" class="cart-btn"><i class="fa-solid fa-cart-plus cart"></i></a>
+      </div>
+
+      <div class="pro" data-category="nendoroid" data-price="70" data-name="Nendoroid 2964 Racing Miku 2026">
+        <a href="product.html"><img src="https://cdn.hstatic.net/products/200000462939/figure-197409_01_a5d9c7a439754ec6984cc1afe79f2112_grande.jpg" alt="Racing Miku 2026"></a>
+        <div class="des">
+          <span>Vocaloid | Good Smile Racing Figure</span>
+          <h5><a href="product.html">Nendoroid 2964 GT Project Racing Miku 2026</a></h5>
+          <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <h4>$70</h4>
+        </div>
+        <a href="cart.html" class="cart-btn"><i class="fa-solid fa-cart-plus cart"></i></a>
+      </div>
+
+      <div class="pro" data-category="nendoroid" data-price="81" data-name="Nendoroid 2939 Sweet Snow Ver.">
+        <a href="product.html"><img src="https://cdn.hstatic.net/products/200000462939/converted-image_-_2026-01-16t175013.365_9b60152a5a3246cca491e7b2f8797db3_grande.png" alt="Sweet Snow"></a>
+        <div class="des">
+          <span>Vocaloid | Good Smile Company</span>
+          <h5><a href="product.html">Nendoroid 2939 Hatsune Miku Sweet Snow Ver.</a></h5>
+          <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <h4>$81</h4>
+        </div>
+        <a href="cart.html" class="cart-btn"><i class="fa-solid fa-cart-plus cart"></i></a>
+      </div>
+
+      <div class="pro" data-category="plushie" data-price="150" data-name="Big Plushie Hatsune Miku Symphony 2019">
+        <a href="product.html"><img src="https://www.goodsmileus.com/cdn/shop/files/101_bdbf0e5a-748b-4eb0-bbff-f811f0b0972d.jpg?v=1772818109" alt="Big Plushie"></a>
+        <div class="des">
+          <span>Good Smile Company</span>
+          <h5><a href="product.html">Big Plushie Hatsune Miku - Symphony: 2019 Ver.</a></h5>
+          <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <h4>$150</h4>
+        </div>
+        <a href="cart.html" class="cart-btn"><i class="fa-solid fa-cart-plus cart"></i></a>
+      </div>
+
+      <div class="pro" data-category="nendoroid" data-price="72" data-name="Ichiban Kuji Snow Miku 2026">
+        <a href="product.html"><img src="https://cdn.hstatic.net/products/200000462939/4675470_58f1e6a424e5418683c59106bd7d11e9_grande.png" alt="Snow Miku 2026"></a>
+        <div class="des">
+          <span>Bandai Spirits Figure</span>
+          <h5><a href="product.html">Ichiban Kuji Hatsune Miku Snow Miku 2026</a></h5>
+          <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <h4>$72</h4>
+        </div>
+        <a href="cart.html" class="cart-btn"><i class="fa-solid fa-cart-plus cart"></i></a>
+      </div>
+
+      <div class="pro" data-category="figure" data-price="20" data-name="Hatsune Miku Sailor Figurizm Alpha">
+        <a href="product.html"><img src="https://cdn.hstatic.net/products/200000462939/3355415-4aeec_b36517f8a8514231b2b44de8152db19a_grande.jpg" alt="Sailor Miku"></a>
+        <div class="des">
+          <span>Sega Fave Figure</span>
+          <h5><a href="product.html">Hatsune Miku Sailor - Figurizm Alpha</a></h5>
+          <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <h4>$20</h4>
+        </div>
+        <a href="cart.html" class="cart-btn"><i class="fa-solid fa-cart-plus cart"></i></a>
+      </div>
+
+      <div class="pro" data-category="figure" data-price="150" data-name="Hatsune Miku 15th Anniversary Ver.">
+        <a href="product.html"><img src="https://img.amiami.com/images/product/review/253/FIGURE-190114_06.jpg" alt="15th Anniversary"></a>
+        <div class="des">
+          <span>Ami Ami Company</span>
+          <h5><a href="product.html">Hatsune Miku 15th Anniversary Ver.</a></h5>
+          <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <h4>$150</h4>
+        </div>
+        <a href="cart.html" class="cart-btn"><i class="fa-solid fa-cart-plus cart"></i></a>
+      </div>
+
+      <div class="pro" data-category="figure" data-price="150" data-name="Hatsune Miku Fashion Fancy Piapro">
+        <a href="product.html"><img src="https://cdn.hstatic.net/products/200000462939/7a168f6f-692a-4e0b-9bdf-1c74dc26a00c_f7c69d42b0b94546a20580a638ce8bd2.jpg" alt="Fashion Fancy"></a>
+        <div class="des">
+          <span>JH Company</span>
+          <h5><a href="product.html">Hatsune Miku Fashion Series Fancy - Piapro</a></h5>
+          <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <h4>$150</h4>
+        </div>
+        <a href="cart.html" class="cart-btn"><i class="fa-solid fa-cart-plus cart"></i></a>
+      </div>
+
+      <div class="pro" data-category="figure" data-price="150" data-name="Hatsune Miku Magical Mirai 2023">
+        <a href="product.html"><img src="https://img.amiami.com/images/product/review/233/FIGURE-158391_11.jpg" alt="Magical Mirai 2023"></a>
+        <div class="des">
+          <span>Ami Ami Company</span>
+          <h5><a href="product.html">Hatsune Miku "Magical Mirai 2023"</a></h5>
+          <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <h4>$150</h4>
+        </div>
+        <a href="cart.html" class="cart-btn"><i class="fa-solid fa-cart-plus cart"></i></a>
+      </div>
+
+      <div class="pro" data-category="figure" data-price="150" data-name="Snow Miku Yukiiro Pop Ver. 1/7">
+        <a href="product.html"><img src="https://api.otaku.vn/uploads/images/products/good-smile-company-gsc-character-vocal-series-01-hatsune-miku-snow-miku-yukiiro-pop-ver-1-7-plastic-figure-f18039b4-aea4-4e0e-95a4-38f3d97f2a2b/good-smile-company-gsc-character-vocal-series-01-hatsune-miku-snow-miku-yukiiro-pop-ver-1-7-plastic-figure-55b0c963-59f4-40b3-a55e-cfe551edf142.jpg" alt="Yukiiro Pop"></a>
+        <div class="des">
+          <span>OTAKU Company</span>
+          <h5><a href="product.html">Snow Miku Yukiiro Pop Ver. 1/7</a></h5>
+          <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <h4>$150</h4>
+        </div>
+        <a href="cart.html" class="cart-btn"><i class="fa-solid fa-cart-plus cart"></i></a>
+      </div>
+
+      <div class="pro" data-category="other" data-price="35" data-name="Hatsune Miku Acrylic Stand Set">
+        <a href="product.html"><img src="https://cdn.hstatic.net/products/200000462939/nendoroid-character-vocal-series-01-hatsune-miku-decomiku-lightness-01_bfd71ffb3f6b495cb48d7c712daf8ba9_grande.jpg" alt="Acrylic Stand"></a>
+        <div class="des">
+          <span>Chotomate Original</span>
+          <h5><a href="product.html">Hatsune Miku Acrylic Stand Set (3 pcs)</a></h5>
+          <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+          <h4>$35</h4>
+        </div>
+        <a href="cart.html" class="cart-btn"><i class="fa-solid fa-cart-plus cart"></i></a>
+      </div>
+
+      <div class="pro" data-category="other" data-price="25" data-name="Vocaloid Mini Keychain Collection">
+        <a href="product.html"><img src="https://cdn.hstatic.net/products/200000462939/4675470_58f1e6a424e5418683c59106bd7d11e9_grande.png" alt="Keychain"></a>
+        <div class="des">
+          <span>Chotomate Original</span>
+          <h5><a href="product.html">Vocaloid Mini Keychain Collection (5 pcs)</a></h5>
+          <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+          <h4>$25</h4>
+        </div>
+        <a href="cart.html" class="cart-btn"><i class="fa-solid fa-cart-plus cart"></i></a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section id="newsletter" class="section-p1 section-m1">
+    <div class="newstext">
+      <h4>Đăng Ký Nhận Bản Tin</h4>
+      <p>Nhận thông tin cập nhật qua Email về cửa hàng mới nhất của chúng tôi và <span>các ưu đãi</span></p>
+    </div>
+    <div class="form">
+      <input type="text" placeholder="Your email address">
+      <button class="normal">Đăng ký</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="section-p1">
+    <div class="col">
+      <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp7o2jO1zCpt_FjuiaeBRLkcaCfmVsQSZ6fA&s">
+      <h4>Thông Tin Liên Hệ</h4>
+      <p><strong>Địa chỉ: </strong>Vietnam, HCM</p>
+      <p><strong>Số điện thoại: </strong>+84 392 98...</p>
+      <p><strong>Giờ: </strong>09:00 - 16:00</p>
+      <div class="follow">
+        <h4>Theo chúng tôi</h4>
+        <div class="icon">
+          <i class="fab fa-facebook-f"></i><i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i><i class="fab fa-pinterest-p"></i>
+          <i class="fab fa-youtube"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <h4>Liên Hệ</h4>
+      <a href="about.html">Về chúng tôi</a>
+      <a href="#">Thông tin giao hàng</a>
+      <a href="#">Chính sách bảo mật</a>
+      <a href="#">Điều khoản & Điều kiện</a>
+      <a href="contact.html">Liên hệ chúng tôi</a>
+    </div>
+    <div class="col">
+      <h4>Tài khoản của chúng tôi</h4>
+      <a href="#">Đăng nhập</a>
+      <a href="cart.html">Xem Giỏ hàng</a>
+      <a href="#">Sản phẩm yêu thích</a>
+      <a href="#">Theo dõi đơn hàng</a>
+      <a href="contact.html">Hỗ trợ</a>
+    </div>
+    <div class="col install">
+      <h4>Tải Ứng Dụng</h4>
+      <p>Từ App Store hoặc Google Play</p>
+      <div class="row">
+        <img src="https://cdn.tgdd.vn/2021/03/GameApp/logoapp-200x200.png">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb5LOPUgzjbz_m4aVulC-GU5zu-30HBdYnAg&s">
+      </div>
+      <p>Cổng thanh toán an toàn</p>
+      <img src="https://rgb.vn/wp-content/uploads/2014/05/rgb_vn_new_branding_paypal_2014_logo_detail.png" alt="">
+    </div>
+    <div class="copyright"><p>© 2026, Chotomate</p></div>
+  </footer>
+
+  <script src="../script/main.js"></script>
+  <script src="../script/shop.js"></script>
+</body>
+</html>

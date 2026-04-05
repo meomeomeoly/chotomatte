@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giỏ Hàng - Chotomate ♡</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../publish/base.css">
+  <link rel="stylesheet" href="../publish/cart.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../publish/responsive.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container">
+      <div class="logo">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp7o2jO1zCpt_FjuiaeBRLkcaCfmVsQSZ6fA&s" alt="Chotomate Logo">
+        <span>Chotomate</span>
+      </div>
+      <nav id="navigationbar">
+                <ul id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="cart.html" class="active">Giỏ hàng <span>🛒</span></a></li>
+        </ul>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section id="page-header" class="cart-header">
+    <h2>#Giỏ Hàng Của Bạn</h2>
+    <p>Kiểm tra và thanh toán đơn hàng</p>
+  </section>
+
+  <!-- Cart Section -->
+  <section id="cart" class="section-p1">
+
+    <!-- Cart Table -->
+    <div class="cart-wrapper">
+      <div class="cart-left">
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>Xóa</th>
+              <th>Hình ảnh</th>
+              <th>Tên sản phẩm</th>
+              <th>Giá</th>
+              <th>Số lượng</th>
+              <th>Tổng phụ</th>
+            </tr>
+          </thead>
+          <tbody id="cart-body">
+            <!-- Populated by JS -->
+          </tbody>
+        </table>
+
+        <div class="cart-actions">
+          <input type="text" id="coupon-input" placeholder="Nhập mã giảm giá...">
+          <button class="btn-coupon" onclick="applyCoupon()">
+            <i class="fas fa-tag"></i> Áp Dụng
+          </button>
+          <button class="btn-update" onclick="updateCart()">
+            <i class="fas fa-sync-alt"></i> Cập Nhật Giỏ Hàng
+          </button>
+          <a href="shop.html" class="btn-continue">
+            <i class="fas fa-arrow-left"></i> Tiếp Tục Mua Sắm
+          </a>
+        </div>
+
+        <div id="coupon-msg" class="coupon-msg" style="display:none"></div>
+      </div>
+
+      <!-- Order Summary -->
+      <div class="cart-summary">
+        <h3>Tóm Tắt Đơn Hàng</h3>
+
+        <div class="summary-row">
+          <span>Tạm tính</span>
+          <span id="subtotal">$0.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Phí vận chuyển</span>
+          <span id="shipping-fee">$5.00</span>
+        </div>
+        <div class="summary-row discount-row" id="discount-row" style="display:none">
+          <span>Giảm giá</span>
+          <span id="discount-amount" class="discount">-$0.00</span>
+        </div>
+        <div class="summary-divider"></div>
+        <div class="summary-row total-row">
+          <span>Tổng cộng</span>
+          <span id="total">$5.00</span>
+        </div>
+
+        <div class="shipping-note">
+          <i class="fas fa-truck"></i>
+          <span>Miễn phí vận chuyển cho đơn hàng trên $100!</span>
+        </div>
+
+        <!-- Shipping Options -->
+        <div class="shipping-options">
+          <h4>Phương thức vận chuyển</h4>
+          <label class="ship-option">
+            <input type="radio" name="shipping" value="5" checked onchange="updateShipping(this)">
+            <span>Giao hàng tiêu chuẩn (3-5 ngày) — $5.00</span>
+          </label>
+          <label class="ship-option">
+            <input type="radio" name="shipping" value="12" onchange="updateShipping(this)">
+            <span>Giao hàng nhanh (1-2 ngày) — $12.00</span>
+          </label>
+          <label class="ship-option">
+            <input type="radio" name="shipping" value="0" onchange="updateShipping(this)">
+            <span>Nhận tại cửa hàng — Miễn phí</span>
+          </label>
+        </div>
+
+        <button class="btn-checkout" onclick="checkout()">
+          <i class="fas fa-lock"></i> Thanh Toán Ngay
+        </button>
+
+        <div class="payment-icons">
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fab fa-cc-paypal"></i>
+          <i class="fab fa-cc-stripe"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty Cart -->
+    <div id="empty-cart" class="empty-cart" style="display:none">
+      <div class="empty-icon">🛒</div>
+      <h3>Giỏ hàng của bạn đang trống!</h3>
+      <p>Hãy khám phá các sản phẩm tuyệt vời của chúng tôi</p>
+      <a href="shop.html" class="btn-cta">Mua Sắm Ngay →</a>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="modal-overlay" style="display:none" onclick="closeModal(event)">
+      <div class="modal-box">
+        <div class="modal-icon">🎉</div>
+        <h3>Đặt Hàng Thành Công!</h3>
+        <p>Cảm ơn bạn đã mua hàng tại <strong>Chotomate ♡</strong></p>
+        <p>Chúng tôi sẽ xử lý và giao hàng sớm nhất!</p>
+        <p class="order-id">Mã đơn hàng: <strong id="order-id-text"></strong></p>
+        <button class="btn-modal-close" onclick="closeModal()">Tiếp Tục Mua Sắm</button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- You Might Also Like -->
+  <section id="product1" class="section-p1" style="margin-top: 20px;">
+    <h2>✨ Có Thể Bạn Cũng Thích ✨</h2>
+    <p>Sản phẩm phổ biến từ Chotomate</p>
+    <div class="pro-container">
+      <div class="pro">
+        <img src="https://cdn.hstatic.net/products/200000462939/nendoroid-character-vocal-series-01-hatsune-miku-decomiku-lightness-01_bfd71ffb3f6b495cb48d7c712daf8ba9_grande.jpg" alt="mohinh1">
+        <div class="des">
+          <span>VOCALOID | Good Smile Company</span>
+          <h5>Nendoroid 3006 DecoMiku Lightness</h5>
+          <div class="star">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <h4>$60</h4>
+        </div>
+        <a href="#" onclick="addToCartFromPage('Nendoroid 3006 DecoMiku Lightness', 60, 'https://cdn.hstatic.net/products/200000462939/nendoroid-character-vocal-series-01-hatsune-miku-decomiku-lightness-01_bfd71ffb3f6b495cb48d7c712daf8ba9_grande.jpg'); return false;"><i class="fa-solid fa-cart-plus cart"></i></a>
+      </div>
+      <div class="pro">
+        <img src="https://cdn.hstatic.net/products/200000462939/gsc-nendoroid-character-vocal-series-01-hatsune-miku-miku-you-2025-01_a27744bf59af4359b4c8a58387428832_grande.jpg" alt="mohinh3">
+        <div class="des">
+          <span>VOCALOID Series | Good Smile Company</span>
+          <h5>Nendoroid 3010 MIKU WITH YOU 2025 Ver.</h5>
+          <div class="star">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <h4>$72</h4>
+        </div>
+        <a href="#" onclick="addToCartFromPage('Nendoroid 3010 MIKU WITH YOU 2025', 72, 'https://cdn.hstatic.net/products/200000462939/gsc-nendoroid-character-vocal-series-01-hatsune-miku-miku-you-2025-01_a27744bf59af4359b4c8a58387428832_grande.jpg'); return false;"><i class="fa-solid fa-cart-plus cart"></i></a>
+      </div>
+      <div class="pro">
+        <img src="https://www.goodsmileus.com/cdn/shop/files/101_bdbf0e5a-748b-4eb0-bbff-f811f0b0972d.jpg?v=1772818109">
+        <div class="des">
+          <span>Good Smile Company</span>
+          <h5>Big Plushie Hatsune Miku - Symphony 2019</h5>
+          <div class="star">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <h4>$150</h4>
+        </div>
+        <a href="#" onclick="addToCartFromPage('Big Plushie Hatsune Miku Symphony 2019', 150, 'https://www.goodsmileus.com/cdn/shop/files/101_bdbf0e5a-748b-4eb0-bbff-f811f0b0972d.jpg?v=1772818109'); return false;"><i class="fa-solid fa-cart-plus cart"></i></a>
+      </div>
+      <div class="pro">
+        <img src="https://cdn.hstatic.net/products/200000462939/converted-image_-_2026-01-16t175013.365_9b60152a5a3246cca491e7b2f8797db3_grande.png" alt="mohinh5">
+        <div class="des">
+          <span>Vocaloid | Good Smile Company</span>
+          <h5>Nendoroid 2939 Sweet Snow Ver.</h5>
+          <div class="star">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <h4>$81</h4>
+        </div>
+        <a href="#" onclick="addToCartFromPage('Nendoroid 2939 Sweet Snow Ver.', 81, 'https://cdn.hstatic.net/products/200000462939/converted-image_-_2026-01-16t175013.365_9b60152a5a3246cca491e7b2f8797db3_grande.png'); return false;"><i class="fa-solid fa-cart-plus cart"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section id="newsletter" class="section-p1 section-m1">
+    <div class="newstext">
+      <h4>Đăng Ký Nhận Bản Tin</h4>
+      <p>Nhận thông tin cập nhật qua Email về cửa hàng mới nhất của chúng tôi và <span>các ưu đãi</span></p>
+    </div>
+    <div class="form">
+      <input type="text" placeholder="Your email address">
+      <button class="normal">Đăng ký</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="section-p1">
+    <div class="col">
+      <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp7o2jO1zCpt_FjuiaeBRLkcaCfmVsQSZ6fA&s">
+      <h4>Thông Tin Liên Hệ</h4>
+      <p><strong>Địa chỉ: </strong>Vietnam, HCM</p>
+      <p><strong>Số điện thoại: </strong>+39298...</p>
+      <p><strong>Giờ: </strong>09:00 - 16:00</p>
+      <div class="follow">
+        <h4>Theo chúng tôi</h4>
+        <div class="icon">
+          <i class="fab fa-facebook-f"></i><i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i><i class="fab fa-pinterest-p"></i>
+          <i class="fab fa-youtube"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <h4>Liên Hệ</h4>
+      <a href="#">Về chúng tôi</a>
+      <a href="#">Thông tin giao hàng</a>
+      <a href="#">Chính sách bảo mật</a>
+      <a href="#">Điều khoản & Điều kiện</a>
+      <a href="contact.html">Liên hệ chúng tôi</a>
+    </div>
+    <div class="col">
+      <h4>Tài khoản của chúng tôi</h4>
+      <a href="#">Đăng nhập</a>
+      <a href="cart.html">Xem Giỏ hàng</a>
+      <a href="#">Sản phẩm yêu thích</a>
+      <a href="#">Theo dõi đơn hàng</a>
+      <a href="#">Hỗ trợ</a>
+    </div>
+    <div class="col install">
+      <h4>Tải Ứng Dụng</h4>
+      <p>Từ App Store hoặc Google Play</p>
+      <div class="row">
+        <img src="https://cdn.tgdd.vn/2021/03/GameApp/logoapp-200x200.png">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb5LOPUgzjbz_m4aVulC-GU5zu-30HBdYnAg&s">
+      </div>
+      <p>Cổng thanh toán an toàn</p>
+      <img src="https://rgb.vn/wp-content/uploads/2014/05/rgb_vn_new_branding_paypal_2014_logo_detail.png" alt="">
+    </div>
+    <div class="copyright"><p>© 2026, Chotomate</p></div>
+  </footer>
+
+  <script>
+    // ---- Cart State ----
+    let cart = JSON.parse(localStorage.getItem('chotomate_cart') || '[]');
+    let shippingCost = 5;
+    let discount = 0;
+
+    const COUPONS = { 'MIKU10': 10, 'ANIME20': 20, 'CHOTOMATE30': 30 };
+
+    function saveCart() { localStorage.setItem('chotomate_cart', JSON.stringify(cart)); }
+
+    function renderCart() {
+      const tbody = document.getElementById('cart-body');
+      const emptyDiv = document.getElementById('empty-cart');
+      const cartWrapper = document.querySelector('.cart-wrapper');
+
+      if (cart.length === 0) {
+        emptyDiv.style.display = 'block';
+        cartWrapper.style.display = 'none';
+        return;
+      }
+      emptyDiv.style.display = 'none';
+      cartWrapper.style.display = 'flex';
+
+      tbody.innerHTML = cart.map((item, i) => `
+        <tr>
+          <td><button class="btn-remove" onclick="removeItem(${i})"><i class="fas fa-times"></i></button></td>
+          <td><img src="${item.img}" class="cart-thumb" alt="${item.name}"></td>
+          <td class="cart-name">${item.name}</td>
+          <td class="cart-price">$${item.price.toFixed(2)}</td>
+          <td>
+            <div class="qty-control">
+              <button onclick="changeQty(${i}, -1)">−</button>
+              <span>${item.qty}</span>
+              <button onclick="changeQty(${i}, 1)">+</button>
+            </div>
+          </td>
+          <td class="cart-subtotal">$${(item.price * item.qty).toFixed(2)}</td>
+        </tr>
+      `).join('');
+
+      updateTotals();
+    }
+
+    function updateTotals() {
+      const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
+      const shipping = subtotal >= 100 ? 0 : shippingCost;
+      const total = subtotal + shipping - discount;
+
+      document.getElementById('subtotal').textContent = '$' + subtotal.toFixed(2);
+      document.getElementById('shipping-fee').textContent = shipping === 0 ? 'Miễn phí' : '$' + shipping.toFixed(2);
+      document.getElementById('total').textContent = '$' + Math.max(0, total).toFixed(2);
+
+      if (discount > 0) {
+        document.getElementById('discount-row').style.display = 'flex';
+        document.getElementById('discount-amount').textContent = '-$' + discount.toFixed(2);
+      }
+    }
+
+    function removeItem(i) {
+      cart.splice(i, 1);
+      saveCart();
+      renderCart();
+    }
+
+    function changeQty(i, delta) {
+      cart[i].qty = Math.max(1, cart[i].qty + delta);
+      saveCart();
+      renderCart();
+    }
+
+    function updateCart() {
+      saveCart();
+      renderCart();
+      showToast('✅ Giỏ hàng đã được cập nhật!');
+    }
+
+    function applyCoupon() {
+      const code = document.getElementById('coupon-input').value.trim().toUpperCase();
+      const msg = document.getElementById('coupon-msg');
+      if (COUPONS[code]) {
+        discount = COUPONS[code];
+        msg.style.display = 'block';
+        msg.className = 'coupon-msg success';
+        msg.textContent = `🎉 Mã "${code}" đã được áp dụng! Giảm $${discount}`;
+        updateTotals();
+      } else {
+        msg.style.display = 'block';
+        msg.className = 'coupon-msg error';
+        msg.textContent = '❌ Mã giảm giá không hợp lệ. Thử: MIKU10, ANIME20, CHOTOMATE30';
+      }
+    }
+
+    function updateShipping(input) {
+      shippingCost = parseFloat(input.value);
+      updateTotals();
+    }
+
+    function checkout() {
+      if (cart.length === 0) { showToast('Giỏ hàng đang trống!'); return; }
+      const orderId = 'CTO-' + Math.random().toString(36).substr(2, 8).toUpperCase();
+      document.getElementById('order-id-text').textContent = orderId;
+      document.getElementById('checkout-modal').style.display = 'flex';
+      cart = [];
+      saveCart();
+    }
+
+    function closeModal(e) {
+      if (!e || e.target === document.getElementById('checkout-modal') || e.target.classList.contains('btn-modal-close')) {
+        document.getElementById('checkout-modal').style.display = 'none';
+        renderCart();
+      }
+    }
+
+    function addToCartFromPage(name, price, img) {
+      const existing = cart.find(i => i.name === name);
+      if (existing) { existing.qty++; }
+      else { cart.push({ name, price, img, qty: 1 }); }
+      saveCart();
+      renderCart();
+      showToast(`🛒 Đã thêm "${name}" vào giỏ hàng!`);
+    }
+
+    function showToast(msg) {
+      let t = document.getElementById('toast');
+      if (!t) {
+        t = document.createElement('div');
+        t.id = 'toast';
+        t.style.cssText = 'position:fixed;bottom:30px;right:30px;background:#d18ce0;color:#fff;padding:14px 22px;border-radius:12px;font-size:0.9rem;font-weight:600;z-index:9999;box-shadow:0 6px 20px rgba(0,0,0,0.15);transition:opacity 0.4s';
+        document.body.appendChild(t);
+      }
+      t.textContent = msg;
+      t.style.opacity = '1';
+      clearTimeout(t._timer);
+      t._timer = setTimeout(() => { t.style.opacity = '0'; }, 3000);
+    }
+
+    // Default demo items if cart is empty
+    if (cart.length === 0) {
+      cart = [
+        { name: 'Nendoroid 3006 DecoMiku Lightness', price: 60, img: 'https://cdn.hstatic.net/products/200000462939/nendoroid-character-vocal-series-01-hatsune-miku-decomiku-lightness-01_bfd71ffb3f6b495cb48d7c712daf8ba9_grande.jpg', qty: 1 },
+        { name: 'Nendoroid 3010 MIKU WITH YOU 2025 Ver.', price: 72, img: 'https://cdn.hstatic.net/products/200000462939/gsc-nendoroid-character-vocal-series-01-hatsune-miku-miku-you-2025-01_a27744bf59af4359b4c8a58387428832_grande.jpg', qty: 2 }
+      ];
+      saveCart();
+    }
+
+    renderCart();
+  </script>
+  <script src="../script/main.js"></script>
+</body>
+</html>

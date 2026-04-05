@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi Tiết Sản Phẩm - Chotomate ♡</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../publish/base.css">
+  <link rel="stylesheet" href="../publish/product.css">
+  <link rel="stylesheet" href="../publish/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <header id="header">
+    <div class="container">
+      <div class="logo">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp7o2jO1zCpt_FjuiaeBRLkcaCfmVsQSZ6fA&s" alt="Chotomate Logo">
+        <span>Chotomate</span>
+      </div>
+      <nav id="navigationbar">
+        <ul id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="cart.html">Giỏ hàng <span>🛒</span></a></li>
+        </ul>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="index.html">Home</a> <span>›</span>
+      <a href="shop.html">Shop</a> <span>›</span>
+      <span>Nendoroid 3006 DecoMiku Lightness</span>
+    </div>
+  </div>
+
+  <!-- Product Detail -->
+  <section id="product-detail" class="section-p1">
+    <div class="product-layout">
+
+      <!-- Image Gallery -->
+      <div class="product-gallery">
+        <div class="main-img-wrap">
+          <img id="main-img"
+            src="https://cdn.hstatic.net/products/200000462939/nendoroid-character-vocal-series-01-hatsune-miku-decomiku-lightness-01_bfd71ffb3f6b495cb48d7c712daf8ba9_grande.jpg"
+            alt="DecoMiku Lightness">
+          <span class="badge-new">Mới</span>
+        </div>
+        <div class="thumb-row">
+          <img class="thumb active" onclick="swapImg(this)" src="https://cdn.hstatic.net/products/200000462939/nendoroid-character-vocal-series-01-hatsune-miku-decomiku-lightness-01_bfd71ffb3f6b495cb48d7c712daf8ba9_grande.jpg" alt="">
+          <img class="thumb" onclick="swapImg(this)" src="https://cdn.hstatic.net/products/200000462939/-nendoroid-character-vocal-series-01-hatsune-miku-decomiku-darkness-01_479c873fdb674bac935dc5cb6631a1d2_grande.jpg" alt="">
+          <img class="thumb" onclick="swapImg(this)" src="https://cdn.hstatic.net/products/200000462939/gsc-nendoroid-character-vocal-series-01-hatsune-miku-miku-you-2025-01_a27744bf59af4359b4c8a58387428832_grande.jpg" alt="">
+          <img class="thumb" onclick="swapImg(this)" src="https://cdn.hstatic.net/products/200000462939/figure-197409_01_a5d9c7a439754ec6984cc1afe79f2112_grande.jpg" alt="">
+        </div>
+      </div>
+
+      <!-- Product Info -->
+      <div class="product-info">
+        <span class="brand-tag">VOCALOID | Good Smile Company</span>
+        <h1 class="product-title">Nendoroid 3006 DecoMiku Lightness</h1>
+
+        <div class="product-rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <span>(128 đánh giá)</span>
+        </div>
+
+        <div class="product-price-wrap">
+          <span class="price-current">$60.00</span>
+          <span class="price-old">$75.00</span>
+          <span class="discount-tag">-20%</span>
+        </div>
+
+        <p class="product-desc">
+          Nendoroid 3006 DecoMiku Lightness là phiên bản giới hạn của Hatsune Miku với thiết kế trang trí
+          lấy cảm hứng từ ánh sáng lấp lánh. Đây là sản phẩm chất lượng cao từ Good Smile Company,
+          có thể tháo rời và lắp ráp theo nhiều tư thế khác nhau. Chiều cao ~10cm, kèm 3 mặt biểu cảm và phụ kiện độc đáo.
+        </p>
+
+        <div class="product-specs">
+          <div class="spec-row"><span class="spec-label">Nhà sản xuất</span><span>Good Smile Company</span></div>
+          <div class="spec-row"><span class="spec-label">Series</span><span>Character Vocal Series 01</span></div>
+          <div class="spec-row"><span class="spec-label">Chiều cao</span><span>~100mm</span></div>
+          <div class="spec-row"><span class="spec-label">Chất liệu</span><span>ABS, PVC</span></div>
+          <div class="spec-row"><span class="spec-label">Tình trạng</span><span class="in-stock">✅ Còn hàng</span></div>
+        </div>
+
+        <!-- Quantity -->
+        <div class="qty-section">
+          <label>Số lượng:</label>
+          <div class="qty-control">
+            <button onclick="changeQty(-1)">−</button>
+            <span id="qty-display">1</span>
+            <button onclick="changeQty(1)">+</button>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="product-actions">
+          <a href="cart.html" class="btn-add-cart">
+            <i class="fas fa-cart-plus"></i> Thêm Vào Giỏ
+          </a>
+          <button class="btn-wishlist" title="Yêu thích">
+            <i class="far fa-heart"></i>
+          </button>
+        </div>
+
+        <!-- Shipping Info -->
+        <div class="shipping-info-box">
+          <div class="ship-item"><i class="fas fa-truck"></i><span>Miễn phí vận chuyển cho đơn hàng trên $100</span></div>
+          <div class="ship-item"><i class="fas fa-undo"></i><span>Đổi trả trong 7 ngày nếu lỗi nhà sản xuất</span></div>
+          <div class="ship-item"><i class="fas fa-shield-alt"></i><span>Bảo hành chính hãng 6 tháng</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabs: Description / Specs / Reviews -->
+    <div class="product-tabs">
+      <div class="tab-buttons">
+        <button class="tab-btn active" onclick="openTab(event,'tab-desc')">Mô Tả</button>
+        <button class="tab-btn" onclick="openTab(event,'tab-spec')">Thông Số</button>
+        <button class="tab-btn" onclick="openTab(event,'tab-review')">Đánh Giá (128)</button>
+      </div>
+
+      <div id="tab-desc" class="tab-content active">
+        <h3>Mô Tả Sản Phẩm</h3>
+        <p>Nendoroid Hatsune Miku: DecoMiku Lightness là một trong những phiên bản được mong đợi nhất trong dòng sản phẩm DecoMiku của Good Smile Company. Sản phẩm được thiết kế với màu sắc tươi sáng, lấy cảm hứng từ vũ điệu ánh sáng đặc trưng trong các buổi hòa nhạc Vocaloid.</p>
+        <ul>
+          <li>Kèm 3 biểu cảm khác nhau: vui vẻ, ngạc nhiên, và biểu cảm hát</li>
+          <li>Phụ kiện: micro, thanh ánh sáng, tấm nền đặc biệt</li>
+          <li>Đế đỡ tiêu chuẩn Nendoroid có thể điều chỉnh</li>
+          <li>Hộp đựng phiên bản giới hạn, thiết kế đặc biệt</li>
+        </ul>
+      </div>
+
+      <div id="tab-spec" class="tab-content">
+        <h3>Thông Số Kỹ Thuật</h3>
+        <table class="spec-table">
+          <tr><td>Series</td><td>Nendoroid</td></tr>
+          <tr><td>Số hiệu</td><td>3006</td></tr>
+          <tr><td>Nhân vật</td><td>Hatsune Miku</td></tr>
+          <tr><td>Phiên bản</td><td>DecoMiku Lightness</td></tr>
+          <tr><td>Nhà SX</td><td>Good Smile Company</td></tr>
+          <tr><td>Chiều cao</td><td>~100mm</td></tr>
+          <tr><td>Chất liệu</td><td>ABS, PVC không độc hại</td></tr>
+          <tr><td>Cân nặng</td><td>~85g (bao gồm hộp: ~200g)</td></tr>
+          <tr><td>Xuất xứ</td><td>Nhật Bản</td></tr>
+          <tr><td>Phiên bản</td><td>Giới hạn 2025</td></tr>
+        </table>
+      </div>
+
+      <div id="tab-review" class="tab-content">
+        <h3>Đánh Giá Khách Hàng</h3>
+        <div class="review-summary">
+          <div class="big-score">5.0</div>
+          <div class="stars-big">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <p>Dựa trên 128 đánh giá</p>
+          </div>
+        </div>
+        <div class="review-list">
+          <div class="review-item">
+            <div class="reviewer">
+              <strong>Nguyễn Thị Lan</strong>
+              <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            </div>
+            <p>"Sản phẩm cực kỳ đáng yêu, đóng gói cẩn thận, giao hàng nhanh. Mình rất hài lòng!"</p>
+          </div>
+          <div class="review-item">
+            <div class="reviewer">
+              <strong>Trần Minh Khoa</strong>
+              <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            </div>
+            <p>"Mô hình chất lượng tốt, màu sắc đẹp như hình. Sẽ ủng hộ Chotomate dài dài!"</p>
+          </div>
+          <div class="review-item">
+            <div class="reviewer">
+              <strong>Phạm Hải Yến</strong>
+              <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+            </div>
+            <p>"Rất đẹp, chỉ tiếc là phụ kiện micro hơi nhỏ, dễ mất. Nhưng tổng thể 9/10!"</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Products -->
+    <div class="related-section">
+      <h2>✨ Sản Phẩm Liên Quan ✨</h2>
+      <div class="pro-container">
+        <div class="pro">
+          <a href="product.html"><img src="https://cdn.hstatic.net/products/200000462939/-nendoroid-character-vocal-series-01-hatsune-miku-decomiku-darkness-01_479c873fdb674bac935dc5cb6631a1d2_grande.jpg" alt="DecoMiku Darkness"></a>
+          <div class="des"><span>Good Smile Company</span><h5>Nendoroid 3007 DecoMiku Darkness</h5><div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><h4>$60</h4></div>
+          <a href="cart.html"><i class="fa-solid fa-cart-plus cart"></i></a>
+        </div>
+        <div class="pro">
+          <a href="product.html"><img src="https://cdn.hstatic.net/products/200000462939/gsc-nendoroid-character-vocal-series-01-hatsune-miku-miku-you-2025-01_a27744bf59af4359b4c8a58387428832_grande.jpg" alt="Miku 2025"></a>
+          <div class="des"><span>Good Smile Company</span><h5>Nendoroid 3010 MIKU WITH YOU 2025</h5><div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><h4>$72</h4></div>
+          <a href="cart.html"><i class="fa-solid fa-cart-plus cart"></i></a>
+        </div>
+        <div class="pro">
+          <a href="product.html"><img src="https://cdn.hstatic.net/products/200000462939/converted-image_-_2026-01-16t175013.365_9b60152a5a3246cca491e7b2f8797db3_grande.png" alt="Sweet Snow"></a>
+          <div class="des"><span>Good Smile Company</span><h5>Nendoroid 2939 Sweet Snow Ver.</h5><div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><h4>$81</h4></div>
+          <a href="cart.html"><i class="fa-solid fa-cart-plus cart"></i></a>
+        </div>
+        <div class="pro">
+          <a href="product.html"><img src="https://www.goodsmileus.com/cdn/shop/files/101_bdbf0e5a-748b-4eb0-bbff-f811f0b0972d.jpg?v=1772818109" alt="Big Plushie"></a>
+          <div class="des"><span>Good Smile Company</span><h5>Big Plushie Hatsune Miku Symphony 2019</h5><div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><h4>$150</h4></div>
+          <a href="cart.html"><i class="fa-solid fa-cart-plus cart"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section id="newsletter" class="section-p1 section-m1">
+    <div class="newstext">
+      <h4>Đăng Ký Nhận Bản Tin</h4>
+      <p>Nhận thông tin cập nhật qua Email về cửa hàng mới nhất của chúng tôi và <span>các ưu đãi</span></p>
+    </div>
+    <div class="form">
+      <input type="text" placeholder="Your email address">
+      <button class="normal">Đăng ký</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="section-p1">
+    <div class="col">
+      <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp7o2jO1zCpt_FjuiaeBRLkcaCfmVsQSZ6fA&s">
+      <h4>Thông Tin Liên Hệ</h4>
+      <p><strong>Địa chỉ: </strong>Vietnam, HCM</p>
+      <p><strong>Số điện thoại: </strong>+84 392 98...</p>
+      <p><strong>Giờ: </strong>09:00 - 16:00</p>
+      <div class="follow">
+        <h4>Theo chúng tôi</h4>
+        <div class="icon">
+          <i class="fab fa-facebook-f"></i><i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i><i class="fab fa-pinterest-p"></i>
+          <i class="fab fa-youtube"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <h4>Liên Hệ</h4>
+      <a href="about.html">Về chúng tôi</a>
+      <a href="#">Thông tin giao hàng</a>
+      <a href="#">Chính sách bảo mật</a>
+      <a href="#">Điều khoản & Điều kiện</a>
+      <a href="contact.html">Liên hệ chúng tôi</a>
+    </div>
+    <div class="col">
+      <h4>Tài khoản của chúng tôi</h4>
+      <a href="#">Đăng nhập</a>
+      <a href="cart.html">Xem Giỏ hàng</a>
+      <a href="#">Sản phẩm yêu thích</a>
+      <a href="#">Theo dõi đơn hàng</a>
+      <a href="contact.html">Hỗ trợ</a>
+    </div>
+    <div class="col install">
+      <h4>Tải Ứng Dụng</h4>
+      <p>Từ App Store hoặc Google Play</p>
+      <div class="row">
+        <img src="https://cdn.tgdd.vn/2021/03/GameApp/logoapp-200x200.png">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb5LOPUgzjbz_m4aVulC-GU5zu-30HBdYnAg&s">
+      </div>
+      <p>Cổng thanh toán an toàn</p>
+      <img src="https://rgb.vn/wp-content/uploads/2014/05/rgb_vn_new_branding_paypal_2014_logo_detail.png" alt="">
+    </div>
+    <div class="copyright"><p>© 2026, Chotomate</p></div>
+  </footer>
+
+  <script src="../script/main.js"></script>
+  <script>
+    function swapImg(el) {
+      document.getElementById('main-img').src = el.src;
+      document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+    }
+    let qty = 1;
+    function changeQty(d) {
+      qty = Math.max(1, qty + d);
+      document.getElementById('qty-display').textContent = qty;
+    }
+    function openTab(e, id) {
+      document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      e.currentTarget.classList.add('active');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liên Hệ - Chotomate ♡</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../publish/base.css">
+  <link rel="stylesheet" href="../publish/contact.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../publish/responsive.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container">
+      <div class="logo">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp7o2jO1zCpt_FjuiaeBRLkcaCfmVsQSZ6fA&s" alt="Chotomate Logo">
+        <span>Chotomate</span>
+      </div>
+      <nav id="navigationbar">
+                <ul id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="cart.html">Giỏ hàng <span>🛒</span></a></li>
+        </ul>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Title Banner -->
+  <section id="page-header" class="contact-header">
+    <h2>#Liên Hệ Với Chúng Tôi</h2>
+    <p>Chúng tôi luôn sẵn sàng hỗ trợ bạn!</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact-detail" class="section-p1">
+
+    <!-- Contact Cards -->
+    <div class="contact-cards">
+      <div class="contact-card">
+        <i class="fas fa-map-marker-alt"></i>
+        <h4>Địa Chỉ</h4>
+        <p>Vietnam, Ho Chi Minh City</p>
+        <p>Quận 1, TP.HCM</p>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-phone-alt"></i>
+        <h4>Số Điện Thoại</h4>
+        <p>+84 392 98...</p>
+        <p>Thứ 2 - Thứ 6, 9:00 - 16:00</p>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-envelope"></i>
+        <h4>Email</h4>
+        <p>support@chotomate.vn</p>
+        <p>Phản hồi trong 24h</p>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-clock"></i>
+        <h4>Giờ Làm Việc</h4>
+        <p>Thứ 2 - Thứ 6: 9:00 - 16:00</p>
+        <p>Thứ 7: 9:00 - 12:00</p>
+      </div>
+    </div>
+
+    <!-- Contact Form + Map -->
+    <div class="contact-main">
+
+      <!-- Form -->
+      <div class="contact-form-box">
+        <h3>Gửi Tin Nhắn Cho Chúng Tôi ♡</h3>
+        <p>Điền thông tin bên dưới, chúng tôi sẽ liên hệ lại sớm nhất!</p>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Họ và tên *</label>
+              <input type="text" placeholder="Nguyễn Văn A" required>
+            </div>
+            <div class="form-group">
+              <label>Email *</label>
+              <input type="email" placeholder="email@example.com" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Số điện thoại</label>
+              <input type="tel" placeholder="+84 xxx xxx xxx">
+            </div>
+            <div class="form-group">
+              <label>Chủ đề</label>
+              <select>
+                <option value="">-- Chọn chủ đề --</option>
+                <option>Hỏi về sản phẩm</option>
+                <option>Đơn hàng & Vận chuyển</option>
+                <option>Đổi trả & Bảo hành</option>
+                <option>Hợp tác kinh doanh</option>
+                <option>Khác</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group full">
+            <label>Tin nhắn *</label>
+            <textarea rows="5" placeholder="Nhập tin nhắn của bạn..." required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">
+            <i class="fas fa-paper-plane"></i> Gửi Tin Nhắn
+          </button>
+          <div id="success-msg" class="success-msg" style="display:none">
+            ✅ Tin nhắn đã được gửi thành công! Chúng tôi sẽ phản hồi trong vòng 24h.
+          </div>
+        </form>
+      </div>
+
+      <!-- Map / Social -->
+      <div class="contact-side">
+        <div class="map-box">
+          <h3>Tìm Chúng Tôi Trên Bản Đồ</h3>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4607!2d106.6980!3d10.7769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f4670702e31%3A0xa5777fb3c4bcf5bc!2sHo%20Chi%20Minh%20City!5e0!3m2!1sen!2svn!4v1625000000000"
+            width="100%"
+            height="220"
+            style="border:0; border-radius: 12px;"
+            allowfullscreen=""
+            loading="lazy">
+          </iframe>
+        </div>
+
+        <div class="social-box">
+          <h3>Kết Nối Với Chúng Tôi</h3>
+          <div class="social-links">
+            <a href="#" class="social-link facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="#" class="social-link instagram"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#" class="social-link youtube"><i class="fab fa-youtube"></i> YouTube</a>
+            <a href="#" class="social-link tiktok"><i class="fab fa-tiktok"></i> TikTok</a>
+          </div>
+        </div>
+
+        <div class="faq-box">
+          <h3>Câu Hỏi Thường Gặp</h3>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              <span>Thời gian giao hàng là bao lâu?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-a">Thông thường 3-5 ngày làm việc trong nội thành TP.HCM, 5-7 ngày cho các tỉnh thành khác.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              <span>Chính sách đổi trả như thế nào?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-a">Chúng tôi hỗ trợ đổi trả trong vòng 7 ngày kể từ khi nhận hàng nếu sản phẩm bị lỗi từ nhà sản xuất.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              <span>Có hỗ trợ ship COD không?</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-a">Có! Chúng tôi hỗ trợ thanh toán khi nhận hàng (COD) trên toàn quốc.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section id="newsletter" class="section-p1 section-m1">
+    <div class="newstext">
+      <h4>Đăng Ký Nhận Bản Tin</h4>
+      <p>Nhận thông tin cập nhật qua Email về cửa hàng mới nhất của chúng tôi và <span>các ưu đãi</span></p>
+    </div>
+    <div class="form">
+      <input type="text" placeholder="Your email address">
+      <button class="normal">Đăng ký</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="section-p1">
+    <div class="col">
+      <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp7o2jO1zCpt_FjuiaeBRLkcaCfmVsQSZ6fA&s">
+      <h4>Thông Tin Liên Hệ</h4>
+      <p><strong>Địa chỉ: </strong>Vietnam, HCM</p>
+      <p><strong>Số điện thoại: </strong>+39298...</p>
+      <p><strong>Giờ: </strong>09:00 - 16:00</p>
+      <div class="follow">
+        <h4>Theo chúng tôi</h4>
+        <div class="icon">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-pinterest-p"></i>
+          <i class="fab fa-youtube"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <h4>Liên Hệ</h4>
+      <a href="#">Về chúng tôi</a>
+      <a href="#">Thông tin giao hàng</a>
+      <a href="#">Chính sách bảo mật</a>
+      <a href="#">Điều khoản & Điều kiện</a>
+      <a href="contact.html">Liên hệ chúng tôi</a>
+    </div>
+    <div class="col">
+      <h4>Tài khoản của chúng tôi</h4>
+      <a href="#">Đăng nhập</a>
+      <a href="cart.html">Xem Giỏ hàng</a>
+      <a href="#">Sản phẩm yêu thích</a>
+      <a href="#">Theo dõi đơn hàng của chúng tôi</a>
+      <a href="#">Hỗ trợ</a>
+    </div>
+    <div class="col install">
+      <h4>Tải Ứng Dụng</h4>
+      <p>Từ App Store hoặc Google Play</p>
+      <div class="row">
+        <img src="https://cdn.tgdd.vn/2021/03/GameApp/logoapp-200x200.png">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb5LOPUgzjbz_m4aVulC-GU5zu-30HBdYnAg&s">
+      </div>
+      <p>Cổng thanh toán an toàn</p>
+      <img src="https://rgb.vn/wp-content/uploads/2014/05/rgb_vn_new_branding_paypal_2014_logo_detail.png" alt="">
+    </div>
+    <div class="copyright">
+      <p>© 2026, Chotomate</p>
+    </div>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('success-msg').style.display = 'block';
+      e.target.reset();
+      setTimeout(() => { document.getElementById('success-msg').style.display = 'none'; }, 5000);
+    }
+    function toggleFaq(btn) {
+      const answer = btn.nextElementSibling;
+      const icon = btn.querySelector('i');
+      const isOpen = answer.style.maxHeight;
+      document.querySelectorAll('.faq-a').forEach(a => a.style.maxHeight = '');
+      document.querySelectorAll('.faq-q i').forEach(i => i.style.transform = '');
+      if (!isOpen) {
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        icon.style.transform = 'rotate(180deg)';
+      }
+    }
+  </script>
+  <script src="../script/main.js"></script>
+</body>
+</html>
